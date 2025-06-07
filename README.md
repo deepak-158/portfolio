@@ -95,7 +95,7 @@ portfolio/
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/dipakshukla158/portfolio.git
+git clone https://github.com/deepak-158/portfolio.git
 cd portfolio
 ```
 
@@ -161,19 +161,47 @@ colors: {
 
 ## 🌐 Deployment
 
-### Vercel
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel`
-3. Follow the prompts
+This project is configured for easy deployment on Vercel with automatic builds from GitHub.
 
-### Netlify
+### Vercel Deployment (Recommended)
+
+1. **Create GitHub Repository** (if not done already):
+   ```bash
+   git remote add origin https://github.com/deepak-158/portfolio.git
+   git push -u origin main
+   ```
+
+2. **Deploy to Vercel**:
+   - Visit [vercel.com](https://vercel.com)
+   - Sign up/login with your GitHub account
+   - Click "New Project"
+   - Import your GitHub repository: `deepak-158/portfolio`
+   - Vercel will automatically detect it's a Vite project
+   - Click "Deploy"
+
+3. **Automatic Deployments**:
+   - Every push to `main` branch will trigger automatic deployment
+   - Preview deployments for pull requests
+   - Custom domain setup available
+
+### Configuration Files
+- `vercel.json` - Deployment configuration with security headers
+- `vite.config.js` - Build optimization and plugin configuration
+
+### Alternative Deployment Options
+
+#### Netlify
 1. Build the project: `npm run build`
 2. Deploy the `dist` folder to Netlify
+3. Set up continuous deployment from GitHub
 
-### GitHub Pages
+#### GitHub Pages
 1. Install gh-pages: `npm install --save-dev gh-pages`
 2. Add to package.json scripts: `"deploy": "gh-pages -d dist"`
 3. Run: `npm run build && npm run deploy`
+
+### Environment Variables
+No environment variables required for basic deployment. If you add external APIs, configure them in your deployment platform.
 
 ## 📄 Features in Detail
 
