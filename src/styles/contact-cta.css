@@ -118,7 +118,7 @@ body.dark .cta-card::before {
   }
   
   .cta-buttons {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 

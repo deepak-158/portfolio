@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Code, Database, Globe, Smartphone, Brain, Settings, Zap, Star } from 'lucide-react';
 
 const Skills = () => {
@@ -251,23 +252,25 @@ const Skills = () => {
           </h3>
           <p className="cta-subtitle">
             Check out my projects to see how I apply these technologies to build amazing solutions.
-          </p>
-          <div className="cta-buttons">            <motion.a
-              href="/projects"
+          </p>          <div className="cta-buttons">            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="cta-button"
             >
-              <span style={{ position: 'relative', zIndex: 1 }}>View My Projects</span>
-              <motion.span
-                className="cta-arrow"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                style={{ position: 'relative', zIndex: 1 }}
+              <Link
+                to="/projects"
+                className="cta-button"
               >
-                →
-              </motion.span>
-            </motion.a>
+                <span style={{ position: 'relative', zIndex: 1 }}>View My Projects</span>
+                <motion.span
+                  className="cta-arrow"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  style={{ position: 'relative', zIndex: 1 }}
+                >
+                  →
+                </motion.span>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </motion.div>

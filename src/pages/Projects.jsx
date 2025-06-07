@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Github, Eye, Filter, Calendar, Tag } from 'lucide-react';
 import { projects, projectCategories } from '../data/projects';
 
@@ -347,23 +348,25 @@ const Projects = () => {
           </h3>
           <p className="cta-subtitle">
             I'm always excited to work on new challenges and bring innovative ideas to life.
-          </p>
-          <div className="cta-buttons">            <motion.a
-              href="/contact"
+          </p>          <div className="cta-buttons">            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="cta-button"
             >
-              <span style={{ position: 'relative', zIndex: 1 }}>Let's Collaborate</span>
-              <motion.span
-                className="cta-arrow"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                style={{ position: 'relative', zIndex: 1 }}
+              <Link
+                to="/contact"
+                className="cta-button"
               >
-                →
-              </motion.span>
-            </motion.a>
+                <span style={{ position: 'relative', zIndex: 1 }}>Let's Collaborate</span>
+                <motion.span
+                  className="cta-arrow"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  style={{ position: 'relative', zIndex: 1 }}
+                >
+                  →
+                </motion.span>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </motion.div>
