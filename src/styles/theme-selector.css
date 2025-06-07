@@ -1,0 +1,214 @@
+/* Theme Selector Styles */
+.theme-selector {
+  position: relative;
+}
+
+.theme-selector-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-selector-trigger:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-secondary);
+  transform: translateY(-1px);
+}
+
+.theme-selector-label {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .theme-selector-label {
+    display: none;
+  }
+}
+
+.theme-selector-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.theme-selector-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 280px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: 0.75rem;
+  box-shadow: var(--elevation-3);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.theme-selector-header {
+  padding: 1rem 1rem 0.5rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.theme-selector-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem;
+}
+
+.theme-selector-header p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.theme-selector-options {
+  padding: 0.5rem;
+}
+
+.theme-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.theme-option:hover {
+  background: var(--bg-secondary);
+}
+
+.theme-option-active {
+  background: var(--primary-50);
+  color: var(--primary-600);
+}
+
+.theme-option-active:hover {
+  background: var(--primary-100);
+}
+
+.theme-option-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--bg-tertiary);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.theme-option-active .theme-option-icon {
+  background: var(--primary-500);
+  color: white;
+}
+
+.theme-option-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.theme-option-name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.125rem;
+}
+
+.theme-option-description {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.theme-option-indicator {
+  position: absolute;
+  right: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--primary-500);
+  border-radius: 50%;
+}
+
+.theme-selector-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+}
+
+.theme-selector-tip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+.theme-selector-tip kbd {
+  padding: 0.125rem 0.25rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+/* Dark theme adjustments */
+body.dark .theme-option-active {
+  background: var(--primary-900);
+  color: var(--primary-200);
+}
+
+body.dark .theme-option-active:hover {
+  background: var(--primary-800);
+}
+
+/* High contrast adjustments */
+:root[data-theme="high-contrast"] .theme-selector-dropdown {
+  border-width: 2px;
+  border-color: var(--border-primary);
+}
+
+:root[data-theme="high-contrast"] .theme-option {
+  border: 1px solid transparent;
+}
+
+:root[data-theme="high-contrast"] .theme-option:hover,
+:root[data-theme="high-contrast"] .theme-option:focus {
+  border-color: var(--border-primary);
+}
+
+:root[data-theme="high-contrast"] .theme-option-active {
+  border-color: var(--primary-500);
+  background: var(--primary-500);
+  color: var(--text-inverse);
+}
+
+/* Animation improvements for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-selector-dropdown,
+  .theme-option,
+  .theme-option-icon {
+    transition: none;
+  }
+}

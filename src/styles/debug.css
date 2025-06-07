@@ -1,0 +1,78 @@
+/* Temporary debug styles - remove in production */
+
+/* Force perfect centering for scroll indicator */
+.scroll-indicator {
+  /* Add a subtle background for debugging */
+  /* background: rgba(255, 0, 0, 0.1) !important; */
+  /* border: 1px dashed red !important; */
+  
+  /* Force perfect centering */
+  position: absolute !important;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force perfect centering for About Me title */
+.section-title {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /* background: rgba(0, 255, 0, 0.1) !important; */
+}
+
+#about-preview {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#about-preview .container {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* Ensure hero section doesn't have any margin/padding issues */
+.hero-section {
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Debug cursor visibility with high contrast colors */
+.cursor-dot {
+  background: #ff0000 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
+  opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+body.dark .cursor-dot {
+  background: #00ff00 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+}
+
+.cursor-outline {
+  border: 2px solid #ff0000 !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5) !important;
+  opacity: 0.8 !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+body.dark .cursor-outline {
+  border: 2px solid #00ff00 !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5) !important;
+}
