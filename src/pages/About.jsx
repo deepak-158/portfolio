@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Award, Heart, Coffee, Music, Camera, Book } from 'lucide-react';
 
 const About = () => {
@@ -216,19 +217,22 @@ const About = () => {
             >
               <h3 className="cta-title">
                 Let's Connect!
-              </h3>
-              <p className="cta-text">
+              </h3>              <p className="cta-text">
                 I'm always excited to discuss new opportunities, collaborate on projects, 
                 or simply have a chat about technology and innovation.
-              </p>              <motion.a
-                href="/contact"
+              </p>
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="cta-button"
               >
-                <Heart size={16} className="cta-icon" />
-                <span style={{ position: 'relative', zIndex: 1 }}>Get In Touch</span>
-              </motion.a></motion.div>
+                <Link
+                  to="/contact"
+                  className="cta-button"
+                >
+                  <Heart size={16} className="cta-icon" />
+                  <span style={{ position: 'relative', zIndex: 1 }}>Get In Touch</span>
+                </Link>
+              </motion.div></motion.div>
           </div>
         </div>
         </motion.div>
